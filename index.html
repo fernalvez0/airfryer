@@ -7,22 +7,36 @@
   <meta name="description" content="Más de 300 recetas saludables, ricas y fáciles para air fryer. Descargá tu recetario digital ahora por solo $3900 ARS." />
   <meta name="theme-color" content="#3B2A1A" />
   <meta name="robots" content="index, follow" />
-  <!-- Meta Pixel Code - cargado de forma diferida -->
+  <!-- Meta Pixel: carga diferida hasta interacción del usuario o 4s -->
   <script>
-  window.addEventListener('load', function() {
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1311244183919849');
-    fbq('track', 'PageView');
-  });
+  (function() {
+    var loaded = false;
+    function loadPixel() {
+      if (loaded) return;
+      loaded = true;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1311244183919849');
+      fbq('track', 'PageView');
+    }
+    // Cargar tras 4s o al primer scroll/click (lo que ocurra primero)
+    var timer = setTimeout(loadPixel, 4000);
+    function earlyLoad() {
+      clearTimeout(timer);
+      loadPixel();
+      document.removeEventListener('scroll', earlyLoad);
+      document.removeEventListener('click', earlyLoad);
+    }
+    document.addEventListener('scroll', earlyLoad, { once: true, passive: true });
+    document.addEventListener('click', earlyLoad, { once: true });
+  })();
   </script>
-  <!-- End Meta Pixel Code -->
   <!-- Fuentes: non-blocking con media trick (evita render blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
