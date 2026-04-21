@@ -485,9 +485,16 @@
     }
   });
 
-  // Sticky CTA con passive scroll
+  // Sticky CTA — visible después de 500px pero oculta cuando la sección de pago está en pantalla
   window.addEventListener('scroll', function() {
-    if (_stickyCta) _stickyCta.classList.toggle('visible', window.scrollY > 500);
+    if (!_stickyCta) return;
+    var pricing = document.getElementById('comprar');
+    var nearPayment = false;
+    if (pricing) {
+      var rect = pricing.getBoundingClientRect();
+      nearPayment = rect.top < window.innerHeight + 100 && rect.bottom > -100;
+    }
+    _stickyCta.classList.toggle('visible', window.scrollY > 500 && !nearPayment);
   }, { passive: true });
 
   // Countdown timer — 45 minutos, se reinicia si el usuario vuelve
