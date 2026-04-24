@@ -300,13 +300,13 @@
             <div style="width:28px;height:28px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;">1</div>
             <div style="flex:1;">
               <div style="font-size:14px;font-weight:500;color:#fff;margin-bottom:10px;">Pagá con Mercado Pago</div>
-              <a href="https://mpago.la/1H6RhRL" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:12px;background:#009EE3;color:#fff;font-size:16px;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'" onclick="fbq('track','InitiateCheckout',{value:4900,currency:'ARS'}); if(!sessionStorage.getItem('purchase_fired')){fbq('track','Purchase',{value:4900,currency:'ARS',content_name:'Recetario Air Fryer'});sessionStorage.setItem('purchase_fired','1');}">
+              <button id="btnPagar" style="display:flex;align-items:center;justify-content:center;gap:12px;background:#009EE3;color:#fff;font-size:16px;font-weight:700;padding:14px 22px;border-radius:12px;border:none;cursor:pointer;width:100%;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'" onclick="iniciarPago()">
                 <img src="data:image/webp;base64,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" width="44" height="44" alt="Mercado Pago" style="border-radius:8px;flex-shrink:0;">
                 <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
                   <span style="font-size:11px;font-weight:400;opacity:.85;letter-spacing:.03em;">Pagar con</span>
                   <span class="mp-price-span" style="font-size:16px;font-weight:700;letter-spacing:.01em;">Mercado Pago · $4.900</span>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -354,7 +354,7 @@
       </div>
 
       <!-- BOTÓN WHATSAPP -->
-      <a href="https://wa.me/542644116786?text=Hola%21%20Acabo%20de%20realizar%20el%20pago%20de%20%244.900%20ARS%20para%20el%20Recetario%20Air%20Fryer.%20Te%20comparto%20el%20comprobante%20%F0%9F%A7%BE" target="_blank" rel="noopener" class="btn-buy" style="background:#25D366;display:flex;align-items:center;justify-content:center;gap:10px;" onclick="if(!sessionStorage.getItem('purchase_fired')){fbq('track','Purchase',{value:4900,currency:'ARS',content_name:'Recetario Air Fryer'});sessionStorage.setItem('purchase_fired','1');}">
+      <a href="https://wa.me/542644116786?text=Hola%21%20Acabo%20de%20realizar%20el%20pago%20de%20%244.900%20ARS%20para%20el%20Recetario%20Air%20Fryer.%20Te%20comparto%20el%20comprobante%20%F0%9F%A7%BE" target="_blank" rel="noopener" class="btn-buy" style="background:#25D366;display:flex;align-items:center;justify-content:center;gap:10px;" onclick="fbq('track','Contact')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Enviar comprobante por WhatsApp
       </a>
@@ -578,6 +578,75 @@
     tick();
     setInterval(tick, 1000);
   })();
+
+  // ── Detectar regreso desde Mercado Pago ──
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var status = params.get('collection_status') || params.get('status');
+    var paymentId = params.get('collection_id') || params.get('payment_id');
+    if (status === 'approved' || paymentId) {
+      // Solo redirigir — Purchase se dispara en /gracias cuando el usuario desliza el slider
+      window.location.replace('/gracias');
+      return;
+    }
+    if (status === 'pending') {
+      window.addEventListener('DOMContentLoaded', function() {
+        var banner = document.createElement('div');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#f59e0b;color:#1a1a1a;text-align:center;padding:12px 16px;font-size:14px;font-weight:600;';
+        banner.textContent = '⏳ Tu pago está siendo procesado. Te avisamos por WhatsApp cuando se confirme.';
+        document.body.prepend(banner);
+      });
+    }
+  })();
+
+  // ── Evitar que MP abra la app en mobile ──
+  window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href*="mpago.la"]').forEach(function(link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.addEventListener('click', function(e) {
+        if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+          e.preventDefault();
+          window.open(link.href, '_blank', 'noopener,noreferrer');
+        }
+      });
+    });
+  });
+
+  // ── Pago con Mercado Pago via backend (con back_urls) ──
+  function iniciarPago() {
+    fbq('track', 'InitiateCheckout');
+    var btn = document.getElementById('btnPagar');
+    var expired = localStorage.getItem('af_expired') === '1';
+    var originalHTML = btn.innerHTML;
+    btn.innerHTML = '⏳ Redirigiendo a Mercado Pago...';
+    btn.disabled = true;
+    btn.style.opacity = '.7';
+
+    fetch('/crear-pago', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ precio: expired ? 'full' : 'oferta' })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        alert('Error al conectar con el servidor de pago. Intentá de nuevo.');
+      }
+    })
+    .catch(function() {
+      btn.innerHTML = originalHTML;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      alert('Error de conexión. Revisá tu internet e intentá de nuevo.');
+    });
+  }
+
 </script>
 </body>
 </html>
