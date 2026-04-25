@@ -1353,7 +1353,7 @@
           />
           <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
             <span style="font-size:11px;font-weight:400;opacity:.85;">Pagar con</span>
-          <span class="mp-price-span" style="font-size:18px;font-weight:800;">👉 Quiero el recetario ahora</span>
+            <span class="mp-price-span">Mercado Pago · $4.900</span>
           </span>
         </a>
         <div class="divider"></div>
@@ -1629,7 +1629,7 @@
       var mpLink = document.getElementById('btnMP');
       if (mpLink) { mpLink.href = 'https://mpago.la/1huLNpa'; mpLink.target = '_blank'; mpLink.rel = 'noopener'; }
       var mpSpan = document.querySelector('.mp-price-span');
-      if (mpSpan) mpSpan.innerHTML = '👉 Quiero el recetario ahora';
+      if (mpSpan) mpSpan.textContent = 'Mercado Pago · $' + PRICE_FULL;
       // Sticky CTA
       var sBtn = document.querySelector('.sticky-btn');
       if (sBtn) sBtn.textContent = '$' + PRICE_FULL + ' ARS';
