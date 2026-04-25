@@ -7,6 +7,25 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#ffffff" />
   <script>
+  // ── Leer link de MP desde query param enviado por index.html ──
+  // Formato: gracias.html?mp=URL_ENCODED&precio=4900
+  var _params  = new URLSearchParams(window.location.search);
+  var MP_OFFER = 'https://mpago.la/1H6RhRL';
+  var MP_FULL  = 'https://mpago.la/1huLNpa';
+  var KEY_EXP  = 'af_expired_v2';
+
+  // Link correcto: param tiene prioridad, localStorage como fallback
+  var _mpLink = _params.get('mp')
+    ? decodeURIComponent(_params.get('mp'))
+    : (localStorage.getItem(KEY_EXP) === '1' ? MP_FULL : MP_OFFER);
+
+  var _precio = _params.get('precio') || '4900';
+
+  // Redirigir a Mercado Pago instantáneamente
+  window.addEventListener('load', function() {
+    window.location.href = _mpLink;
+  });
+
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -204,10 +223,17 @@
       // Fire Purchase pixel ONLY here
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Purchase', {
-          value: 4900, currency: 'ARS',
+          value: parseInt(_precio, 10),
+          currency: 'ARS',
           content_name: 'Recetario Air Fryer',
           content_type: 'product'
         });
+      }
+
+      // Actualizar link de WhatsApp con el precio correcto
+      var waBtn = document.querySelector('.btn-wa');
+      if (waBtn) {
+        waBtn.href = 'https://wa.me/542644116786?text=Hola%21%20Realic%C3%A9%20el%20pago%20del%20Recetario%20Air%20Fryer%20por%20%24' + _precio + '%20ARS.%20Te%20mando%20el%20comprobante%20%F0%9F%A7%BE';
       }
 
       setTimeout(function() {
