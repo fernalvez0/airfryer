@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recetario Air Fryer Premium – +300 Recetas para tu Freidora</title>
-  <meta name="description" content="Descubrí todo lo que podés cocinar en tu air fryer. +300 recetas fáciles y saludables para Argentina. Solo $4.900 ARS." />
+  <title>+365 Recetas para tu Air Fryer – Sin aceite, listas en minutos</title>
+  <meta name="description" content="Más de 365 recetas para tu air fryer. Desayunos, almuerzos, cenas y postres. Sin aceite, sin complicaciones. Acceso inmediato por $4.900 ARS." />
   <meta name="theme-color" content="#1A0D00" />
   <meta name="robots" content="index, follow" />
 
@@ -139,16 +139,16 @@
       top: 0;
       z-index: 200;
       background: var(--orange);
-      padding: 10px 20px;
+      padding: 13px 20px;
       text-align: center;
       font-family: 'Sora', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 800;
       color: #fff;
       cursor: pointer;
       letter-spacing: .02em;
     }
-    #topBar span { font-size: 16px; }
+    #topBar span { font-size: 20px; background: rgba(0,0,0,0.2); padding: 2px 10px; border-radius: 6px; }
 
     /* ═══ S1: HERO ═══ */
     .hero {
@@ -953,7 +953,7 @@
 <!-- S0: COUNTDOWN BAR — urgencia real         -->
 <!-- ══════════════════════════════════════════ -->
 <div id="topBar" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})">
-  🔥 Oferta termina en: <span id="countdown">30:00</span> — <strong>$4.900 ARS</strong>
+  ⏰ Oferta vence en: <span id="countdown">30:00</span> — después vuelve a <strong>$25.000</strong> · Hoy solo <strong>$4.900</strong>
 </div>
 
 <!-- ══════════════════════════════════════════ -->
@@ -964,17 +964,25 @@
     <!-- Prueba social encima del headline -->
     <div class="social-proof-anchor">
       <span class="stars">★★★★★</span>
-      <span>+112 familias ya cocinan mejor con este recetario</span>
+      <span>+365 familias ya cocinan mejor con este recetario</span>
     </div>
 
-    <!-- Headline con message match al anuncio -->
+    <!-- Headline nuevo: específico + directo -->
     <h1 class="hero-headline">
-      No sabías todo lo que podés<br>cocinar en tu <em>air fryer</em>
+      🍟 Más de <em>365 recetas</em> para tu air fryer<br>— sin aceite y listas en minutos
     </h1>
 
     <p class="hero-sub">
-      +300 recetas fáciles para que tu freidora trabaje para vos todos los días. Sin aceite, sin complicaciones, con ingredientes que ya tenés en casa.
+      Si usás tu air fryer solo para papas fritas, estás desaprovechándola.<br>
+      Descubrí comidas fáciles, rápidas y distintas para todos los días sin pensar qué cocinar.
     </p>
+
+    <!-- Checks rápidos -->
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px;text-align:left;">
+      <span style="font-size:15px;color:var(--text2);">✔ Desayunos, almuerzos, cenas y postres</span>
+      <span style="font-size:15px;color:var(--text2);">✔ Opciones saludables y económicas</span>
+      <span style="font-size:15px;color:var(--text2);">✔ Ideal si no sabés qué hacer con lo que tenés en casa</span>
+    </div>
 
     <!-- ⚡ REEMPLAZAR imágenes con WebP reales ≤80KB -->
     <div class="hero-carousel-wrap">
@@ -1012,13 +1020,17 @@
         <button class="cdot" onclick="goSlide(1)" aria-label="Foto 2"></button>
         <button class="cdot" onclick="goSlide(2)" aria-label="Foto 3"></button>
       </div>
-      <div class="hero-img-badge">+300 recetas</div>
+      <div class="hero-img-badge">+365 recetas</div>
     </div>
 
-    <a href="#comprar" class="btn-cta">
-      🛒 Quiero mi recetario por $4.900 ARS
+    <!-- CTA hero: acción > precio -->
+    <a href="#comprar" class="btn-cta" style="font-size:19px;padding:22px 24px;">
+      👉 Quiero el recetario ahora
     </a>
-    <p class="btn-microcopy">🔒 Pago seguro con Mercado Pago · Acceso inmediato en minutos</p>
+    <p class="btn-microcopy" style="font-size:14px;margin-top:8px;">
+      🔥 Acceso inmediato después del pago · <s style="opacity:.6;">$25.000</s> → hoy <strong style="color:var(--orange2);">$4.900 ARS</strong>
+    </p>
+    <p class="btn-microcopy" style="margin-top:6px;">⏰ Oferta activa por tiempo limitado — después vuelve a $25.000</p>
   </div>
 </section>
 
@@ -1028,19 +1040,14 @@
 <section class="pain">
   <div class="container reveal">
     <span class="tag">¿Te pasa esto?</span>
-    <h2 class="section-title">Tenés el air fryer, pero siempre terminás haciendo lo mismo</h2>
-    <p class="pain-intro">
-      Compraste la freidora con toda la ilusión de comer más sano y ahorrar plata. Pero las recetas de YouTube no te salen como en el video, y cuando intentás inventar algo, siempre queda seco o mal cocido.
-    </p>
+    <h2 class="section-title">Tenés la air fryer… pero siempre terminás haciendo lo mismo</h2>
     <ul class="pain-list">
-      <li>Seguís los pasos del video y aun así el pollo queda duro o quemado por fuera</li>
-      <li>No sabés los tiempos ni temperaturas correctas para cada alimento</li>
-      <li>Siempre hacés lo mismo: papas fritas o nuggets, nada más</li>
-      <li>Pensás en pedir comida porque total no te sale bien</li>
-      <li>La freidora está guardada porque no sabés qué más hacer con ella</li>
+      <li>No sabés qué cocinar con lo que tenés en casa</li>
+      <li>Terminás repitiendo siempre las mismas comidas</li>
+      <li>Perdés tiempo pensando qué hacer y al final pedís delivery</li>
     </ul>
     <div class="pain-reframe">
-      Eso no es un problema tuyo. Nadie te enseñó todo lo que puede hacer tu air fryer. Los videos muestran el resultado final, no los detalles que hacen la diferencia.
+      👉 Con este recetario, simplemente elegís una receta y listo.
     </div>
   </div>
 </section>
@@ -1077,6 +1084,17 @@
     <p class="section-sub">
       Recetas con ingredientes accesibles, tiempos y temperaturas exactas para cualquier modelo de freidora, paso a paso, en tu celular.
     </p>
+
+    <!-- Bloque beneficios directo -->
+    <div style="background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:24px;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange2);margin-bottom:14px;">Lo que vas a lograr con este recetario:</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <span style="font-size:15px;color:var(--text2);">✔ Comer más variado sin esfuerzo</span>
+        <span style="font-size:15px;color:var(--text2);">✔ Cocinar más rápido todos los días</span>
+        <span style="font-size:15px;color:var(--text2);">✔ Dejar de improvisar comidas</span>
+        <span style="font-size:15px;color:var(--text2);">✔ Aprovechar tu air fryer al 100%</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1103,7 +1121,7 @@
 
     <div class="metrics-row">
       <div class="metric-card">
-        <span class="metric-num">112</span>
+        <span class="metric-num">365+</span>
         <span class="metric-label">familias que ya lo usan</span>
       </div>
       <div class="metric-card">
@@ -1111,7 +1129,7 @@
         <span class="metric-label">bajé en el 1er mes</span>
       </div>
       <div class="metric-card">
-        <span class="metric-num">+300</span>
+        <span class="metric-num">+365</span>
         <span class="metric-label">recetas probadas</span>
       </div>
     </div>
@@ -1153,7 +1171,7 @@
       </li>
       <li class="chapter-item">
         <span class="chapter-num">07</span>
-        Tabla de ajuste por modelo y marca de air fryer
+        Cenas listas en 15 minutos para cuando llegás cansado a casa
       </li>
     </ul>
 
@@ -1172,7 +1190,7 @@
         <span class="price-val">$4.000</span>
       </div>
       <div class="value-stack-row">
-        <span>Tabla de ajuste por modelo</span>
+        <span>Cenas listas en 15 minutos</span>
         <span class="price-val">$4.000</span>
       </div>
       <div class="value-total">
@@ -1182,7 +1200,7 @@
     </div>
 
     <a href="#comprar" class="btn-cta">
-      🛒 Quiero todo esto por $4.900 ARS
+      👉 Quiero el recetario ahora
     </a>
   </div>
 </section>
@@ -1272,8 +1290,15 @@
       <span>+112 familias ya lo tienen · Entrega inmediata</span>
     </div>
 
+    <!-- 🔥 HOY EN PROMO badge -->
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="display:inline-block;background:var(--orange);color:#fff;font-family:'Sora',sans-serif;font-size:16px;font-weight:800;padding:10px 28px;border-radius:100px;letter-spacing:.04em;">
+        🔥 HOY EN PROMO
+      </div>
+    </div>
+
     <div class="price-card">
-      <div class="price-badge-top">⚡ Oferta de lanzamiento</div>
+      <div class="price-badge-top">⚡ Oferta por tiempo limitado</div>
 
       <div class="price-old">Precio regular $25.000 ARS</div>
       <div class="price-main"><span class="price-currency">$</span>4.900</div>
@@ -1282,13 +1307,13 @@
       <ul class="price-bullets">
         <li><span class="check-icon">✓</span> +300 recetas en PDF descargable</li>
         <li><span class="check-icon">✓</span> Guía de inicio con temperaturas y tiempos</li>
-        <li><span class="check-icon">✓</span> Tabla de ajuste por modelo de air fryer</li>
+        <li><span class="check-icon">✓</span> Cenas listas en 15 minutos para cuando llegás cansado</li>
         <li><span class="check-icon">✓</span> Funciona en celular, tablet y PC</li>
         <li><span class="check-icon">✓</span> Garantía 30 días sin preguntas</li>
       </ul>
 
       <div class="urgency-box">
-        ⏳ Esta oferta vence pronto — precio sube a $25.000 ARS
+        ⏰ Oferta activa por tiempo limitado — después vuelve a $25.000 ARS
       </div>
 
       <!-- INSTRUCCIONES DE PAGO -->
@@ -1328,7 +1353,7 @@
           />
           <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
             <span style="font-size:11px;font-weight:400;opacity:.85;">Pagar con</span>
-            <span class="mp-price-span">Mercado Pago · $4.900</span>
+          <span class="mp-price-span" style="font-size:18px;font-weight:800;">👉 Quiero el recetario ahora</span>
           </span>
         </a>
         <div class="divider"></div>
@@ -1436,7 +1461,7 @@
           <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
         <div class="faq-a" role="region">
-          Sí. Incluimos una tabla de ajuste de tiempos y temperaturas para los modelos más comunes (Essen, Philips, Oster, Black+Decker, etc.). Las recetas funcionan con cualquier freidora de aire.
+          Sí. Incluimos recetas especiales de cenas rápidas listas en 15 minutos o menos, ideales para los días que llegás cansado y no querés pensar qué cocinar. Todas con ingredientes simples que ya tenés en casa.
         </div>
       </div>
 
@@ -1590,32 +1615,37 @@
     var PRICE_FULL  = '25.000';
 
     function showExpired() {
-      // Cambiar precio principal
+      // Precio principal
       document.querySelectorAll('.price-main').forEach(function(el) {
         el.innerHTML = '<span class="price-currency">$</span>' + PRICE_FULL;
       });
       document.querySelectorAll('.price-old').forEach(function(el) {
-        el.textContent = 'Precio lanzamiento $' + PRICE_OFFER + ' ARS';
+        el.textContent = 'Precio oferta $' + PRICE_OFFER + ' ARS';
       });
       document.querySelectorAll('.price-label').forEach(function(el) {
         el.textContent = 'ARS · precio regular';
       });
+      // Botón MP
       var mpLink = document.getElementById('btnMP');
       if (mpLink) { mpLink.href = 'https://mpago.la/1huLNpa'; mpLink.target = '_blank'; mpLink.rel = 'noopener'; }
       var mpSpan = document.querySelector('.mp-price-span');
-      if (mpSpan) mpSpan.textContent = 'Mercado Pago · $' + PRICE_FULL;
+      if (mpSpan) mpSpan.innerHTML = '👉 Quiero el recetario ahora';
       // Sticky CTA
       var sBtn = document.querySelector('.sticky-btn');
       if (sBtn) sBtn.textContent = '$' + PRICE_FULL + ' ARS';
-      // Hero CTA
+      // Todos los btn-cta
       document.querySelectorAll('.btn-cta').forEach(function(el) {
-        el.textContent = '🛒 Comprar por $' + PRICE_FULL + ' ARS';
+        el.textContent = '👉 Quiero el recetario ahora';
+      });
+      // Urgency box
+      document.querySelectorAll('.urgency-box').forEach(function(el) {
+        el.textContent = '⌛ Oferta vencida — Precio actual $' + PRICE_FULL + ' ARS';
       });
       // Top bar
       var bar = document.getElementById('topBar');
       if (bar) {
         bar.style.background = '#555';
-        bar.textContent = '⌛ Oferta vencida — Precio regular $' + PRICE_FULL + ' ARS';
+        bar.innerHTML = '⌛ Oferta vencida — Precio regular <strong>$' + PRICE_FULL + ' ARS</strong>';
       }
     }
 
