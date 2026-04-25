@@ -712,10 +712,12 @@
       border-radius: var(--radius);
       text-decoration: none;
       border: none;
+      outline: none;
       cursor: pointer;
       transition: opacity .2s, transform .15s;
       margin-bottom: 12px;
       min-height: 60px;
+      -webkit-tap-highlight-color: transparent;
     }
     .btn-mp:active { opacity: .85; transform: scale(0.98); }
 
@@ -1303,16 +1305,24 @@
 
         <div class="divider"></div>
 
-        <!-- Botón Mercado Pago — redirige a gracias.html que luego va a MP -->
+        <!-- Botón Mercado Pago — el onclick decide el destino en el momento del click -->
         <a
-          href="gracias.html"
+          href="#"
           class="btn-mp"
           id="btnMP"
-          onclick="if(typeof fbq==='function') fbq('track','InitiateCheckout',{value:4900,currency:'ARS'})"
+          target="_blank"
+          rel="noopener"
+          onclick="
+            event.preventDefault();
+            var expired = localStorage.getItem('af_expired_v2') === '1';
+            var url = expired ? 'https://mpago.la/1huLNpa' : 'https://mpago.la/1H6RhRL';
+            if(typeof fbq==='function') fbq('track','InitiateCheckout',{value: expired ? 25000 : 4900, currency:'ARS'});
+            window.open(url, '_blank', 'noopener');
+          "
         >
           <img
-            src="data:image/webp;base64,UklGRqoBAABXRUJQVlA4IJ4BAACQCQCdASowADAAPtFgq0+oJSQiI4sBABoJbADK46vOYWU2ze4e3gDedF+BpXJkXkxw6JPCRVe+pb3jkpVBEOq6MctktKrM4/qJ5x5jWMfpja4+P6qsAP792SnppqXGClLGx4VzkaP9BAfs2UtmkSrAnQhRfG8gQnSMggPGfJRrN+QTOIS4uvHgc/A+vS0pDcmMzOlim/39YswEK7IbWj+kFFgYIhlpCMFSPK7oNFYDeFLU7UBV6yQ589R3G8VScQuZokF/VNECDJcKiza8JoEH6TtBzwZww+GWtfwHWS0vHcS3+7GCM/vRD0EEdgKs9m7KWzZKxxbkDu4bbwPsK2Df+i/jU/3qOoBPpUtpzKBer0cfiUD3S/4aemcx5XVW0KD6w8VWXreBYMNO4IzoXITrQNwAkhhDadwwTBHvYKF7idK17i61bk4nyLCGZ5O0Tdfokv/suEGtSijNtSa8iQCAhQFUOd1jDT5ATBIX5tXNWoccHgOhHS67ck4tbAqjmg9TWZbtGg+AXy7OvDaHULhoBOdhsPvq8RzVrLPQAAA="
-            width="48" height="48"
+            src="data:image/webp;base64,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"
+            width="56" height="56"
             alt="Mercado Pago"
             style="border-radius:8px;flex-shrink:0;"
           />
@@ -1321,7 +1331,6 @@
             <span class="mp-price-span">Mercado Pago · $4.900</span>
           </span>
         </a>
-
         <div class="divider"></div>
 
         <div class="pay-step">
@@ -1513,20 +1522,6 @@
   // Autoplay cada 3.5s
   setInterval(function() { goSlide((_slide + 1) % 3); }, 3500);
 
-  // ── MP button: pasar el link correcto a gracias.html ──
-  // Lee el localStorage del countdown para saber si expiró
-  (function() {
-    var btnMP = document.getElementById('btnMP');
-    if (!btnMP) return;
-    var KEY_EXP = 'af_expired_v2';
-    var LINK_OFFER  = 'https://mpago.la/1H6RhRL';
-    var LINK_FULL   = 'https://mpago.la/1huLNpa';
-    var expired = localStorage.getItem(KEY_EXP) === '1';
-    var mpLink = expired ? LINK_FULL : LINK_OFFER;
-    // gracias.html recibe el link via query param para luego redirigir
-    btnMP.href = 'gracias.html?mp=' + encodeURIComponent(mpLink) + '&precio=' + (expired ? '25000' : '4900');
-  })();
-
   // ── Sticky CTA ──
   var _sticky = document.getElementById('stickyCta');
   var _pricing = document.getElementById('comprar');
@@ -1606,7 +1601,7 @@
         el.textContent = 'ARS · precio regular';
       });
       var mpLink = document.getElementById('btnMP');
-      if (mpLink) mpLink.href = 'gracias.html?mp=' + encodeURIComponent('https://mpago.la/1huLNpa') + '&precio=25000';
+      if (mpLink) { mpLink.href = 'https://mpago.la/1huLNpa'; mpLink.target = '_blank'; mpLink.rel = 'noopener'; }
       var mpSpan = document.querySelector('.mp-price-span');
       if (mpSpan) mpSpan.textContent = 'Mercado Pago · $' + PRICE_FULL;
       // Sticky CTA
