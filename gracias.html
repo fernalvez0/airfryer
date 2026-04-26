@@ -3,1649 +3,435 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recetario Air Fryer Premium – +300 Recetas para tu Freidora</title>
-  <meta name="description" content="Descubrí todo lo que podés cocinar en tu air fryer. +300 recetas fáciles y saludables para Argentina. Solo $4.900 ARS." />
-  <meta name="theme-color" content="#1A0D00" />
-  <meta name="robots" content="index, follow" />
+  <title>Confirmar pago – Recetario Air Fryer</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#ffffff" />
 
-  <!-- ⚡ Preload LCP image -->
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dvtggnvgn/image/upload/f_auto,q_auto,w_400/v1776714357/1_1_1_1_1_prs5sd.jpg" fetchpriority="high" />
-
-  <!-- Fuentes non-blocking -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
-
-  <!-- DNS prefetch -->
-  <link rel="preconnect" href="https://res.cloudinary.com" />
-  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-
-  <!-- Meta Pixel: carga diferida para proteger algoritmo (no dispara eventos falsos) -->
+  <!-- Meta Pixel -->
   <script>
-  (function() {
-    var loaded = false;
-    function loadPixel() {
-      if (loaded) return;
-      loaded = true;
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1311244183919849');
-      fbq('track', 'PageView');
-    }
-    // Solo cargar tras interacción real del usuario (no dispara en bots/crawlers)
-    var timer = setTimeout(loadPixel, 5000);
-    function earlyLoad() { clearTimeout(timer); loadPixel(); }
-    document.addEventListener('scroll', earlyLoad, { once: true, passive: true });
-    document.addEventListener('touchstart', earlyLoad, { once: true, passive: true });
-    // ✏️ IMPORTANTE: NO trackear Purchase ni InitiateCheckout en carga de página
-    // Solo trackear en el click real del botón de Mercado Pago (ver abajo)
-  })();
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1311244183919849');
+  fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1311244183919849&ev=PageView&noscript=1"/></noscript>
 
   <style>
-    /* ═══ VARIABLES Y RESET ═══ */
-    :root {
-      --bg: #0F0800;
-      --bg2: #1A0E02;
-      --bg3: #221508;
-      --surface: rgba(255,255,255,0.05);
-      --surface2: rgba(255,255,255,0.08);
-      --orange: #FF6B1A;
-      --orange2: #FF8C47;
-      --orange-glow: rgba(255,107,26,0.25);
-      --gold: #F0A500;
-      --green: #22C55E;
-      --green-pale: rgba(34,197,94,0.12);
-      --text: #F5EDE0;
-      --text2: rgba(245,237,224,0.65);
-      --text3: rgba(245,237,224,0.4);
-      --border: rgba(255,255,255,0.1);
-      --radius: 16px;
-      --radius-sm: 10px;
-    }
-    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Nunito', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { max-width: 100%; height: auto; }
-
-    /* ═══ UTILIDADES ═══ */
-    .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--orange2);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: clamp(24px, 6vw, 36px);
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-    .section-sub {
-      font-size: 16px;
-      color: var(--text2);
-      line-height: 1.6;
-    }
-
-    /* ═══ CTA BUTTON — consistente en toda la página ═══ */
-    .btn-cta {
-      display: block;
-      width: 100%;
-      background: var(--orange);
-      color: #fff;
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      padding: 20px 24px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      transition: background .2s, transform .15s;
-      position: relative;
-      overflow: hidden;
-      min-height: 60px;
-    }
-    .btn-cta::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
-    }
-    .btn-cta:active { transform: scale(0.98); background: var(--orange2); }
-    .btn-microcopy {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text3);
-      margin-top: 10px;
-    }
-
-    /* ═══ S0: COUNTDOWN BAR ═══ */
-    #topBar {
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background: var(--orange);
-      padding: 10px 20px;
-      text-align: center;
-      font-family: 'Sora', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-      letter-spacing: .02em;
-    }
-    #topBar span { font-size: 16px; }
-
-    /* ═══ S1: HERO ═══ */
-    .hero {
-      background: var(--bg);
-      padding: 40px 0 48px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(255,107,26,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .social-proof-anchor {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--text2);
-      margin-bottom: 20px;
-      font-weight: 600;
+      padding: 24px;
     }
-    .social-proof-anchor .stars { color: var(--gold); font-size: 15px; }
-    .hero-headline {
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: clamp(28px, 8vw, 44px);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.1;
-      text-align: center;
-      margin-bottom: 14px;
-    }
-    .hero-headline em {
-      font-style: normal;
-      color: var(--orange2);
-    }
-    .hero-sub {
-      font-size: 16px;
-      color: var(--text2);
-      line-height: 1.6;
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    /* CAROUSEL */
-    .hero-carousel-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto 28px;
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      background: var(--bg3);
-      contain: layout style;
-    }
-    .carousel-track {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform .6s cubic-bezier(.4,0,.2,1);
-      will-change: transform;
-    }
-    .carousel-slide {
-      width: calc(100% / 3);
-      height: 100%;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .carousel-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.72));
-      padding: 20px 14px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #fff;
-    }
-    .carousel-dots {
-      position: absolute;
-      bottom: 44px; left: 0; right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-    }
-    .cdot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
+    .card {
       background: #fff;
-      opacity: .4;
-      cursor: pointer;
-      border: none;
-      padding: 0;
-      transition: opacity .2s;
-    }
-    .cdot.active { opacity: 1; }
-    .hero-img-badge {
-      position: absolute;
-      top: 12px; right: 12px;
-      background: var(--gold);
-      color: #000;
-      font-family: 'Sora', sans-serif;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 6px 12px;
-      border-radius: 100px;
-      letter-spacing: .04em;
-      z-index: 2;
-    }
-
-    /* ═══ S2: DOLOR ═══ */
-    .pain {
-      padding: 52px 0;
-      background: var(--bg2);
-    }
-    .pain-intro {
-      font-size: 17px;
-      color: var(--text2);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-    .pain-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .pain-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 16px;
-      color: var(--text2);
-      line-height: 1.5;
-    }
-    .pain-list li::before {
-      content: '✗';
-      color: #FF4444;
-      font-size: 18px;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .pain-reframe {
-      background: var(--surface);
-      border-left: 3px solid var(--orange);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 16px 20px;
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    /* ═══ S3: MECANISMO ═══ */
-    .mechanism {
-      padding: 52px 0;
-      background: var(--bg);
-    }
-    .mechanism-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      margin: 32px 0;
-    }
-    .diag-step {
-      flex: 1;
-      text-align: center;
-      padding: 20px 12px;
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      position: relative;
-    }
-    .diag-step .icon { font-size: 28px; display: block; margin-bottom: 8px; }
-    .diag-step .label { font-size: 13px; font-weight: 600; color: var(--text2); line-height: 1.4; }
-    .diag-arrow {
-      font-size: 22px;
-      color: var(--orange);
-      padding: 0 6px;
-      flex-shrink: 0;
-    }
-    .diag-step.highlight {
-      background: var(--orange-glow);
-      border: 1px solid rgba(255,107,26,0.3);
-    }
-    .diag-step.highlight .label { color: var(--orange2); }
-
-    /* ═══ S4: AUTORIDAD ═══ */
-    .authority {
-      padding: 52px 0;
-      background: var(--bg2);
-    }
-    /* ✏️ PERSONALIZAR: foto de Fernando */
-    .author-card {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 28px;
-      padding: 20px;
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-    .author-avatar-big {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--gold));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Sora', sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-      color: #fff;
-      flex-shrink: 0;
-      /* ✏️ PERSONALIZAR: reemplazar con <img> real */
-    }
-    .author-info { flex: 1; }
-    .author-name-big {
-      font-family: 'Sora', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .author-role { font-size: 13px; color: var(--text3); margin-bottom: 10px; }
-    .author-story {
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-    .author-story strong { color: var(--orange2); }
-    .metrics-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .metric-card {
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      padding: 16px 12px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
-    .metric-num {
-      font-family: 'Sora', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--orange2);
-      display: block;
-    }
-    .metric-label { font-size: 12px; color: var(--text3); line-height: 1.3; margin-top: 4px; }
-
-    /* ═══ S5: QUÉ INCLUYE ═══ */
-    .includes {
-      padding: 52px 0;
-      background: var(--bg);
-    }
-    .chapter-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 28px 0;
-    }
-    .chapter-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 16px;
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      font-size: 15px;
-      color: var(--text2);
-    }
-    .chapter-num {
-      font-family: 'Sora', sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--orange);
-      background: rgba(255,107,26,0.1);
-      width: 28px; height: 28px;
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .value-stack {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 28px;
-    }
-    .value-stack-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 15px;
-      color: var(--text2);
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .value-stack-row:last-child { border-bottom: none; }
-    .value-stack-row .price-val { color: var(--orange2); font-weight: 700; }
-    .value-total {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0 0;
-      font-family: 'Sora', sans-serif;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .value-total .total-val { color: var(--orange); font-size: 20px; }
-
-    /* ═══ S6: TESTIMONIOS ═══ */
-    .testimonials {
-      padding: 52px 0;
-      background: var(--bg2);
-    }
-    .testimonials-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 28px;
-    }
-    .testi-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-    }
-    .testi-stars { color: var(--gold); font-size: 15px; margin-bottom: 10px; }
-    .testi-text {
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-    .testi-text strong { color: var(--orange2); }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .testi-avatar {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800;
-      font-size: 14px;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .testi-name { font-size: 14px; font-weight: 700; color: var(--text); }
-    .testi-city { font-size: 12px; color: var(--text3); }
-    /* ✏️ PERSONALIZAR: reemplazar avatares con screenshots reales de WhatsApp */
-    .wa-screenshot-placeholder {
-      margin-top: 20px;
-      background: var(--surface);
-      border: 1px dashed rgba(37,211,102,0.3);
-      border-radius: var(--radius-sm);
-      padding: 20px;
-      text-align: center;
-      color: var(--text3);
-      font-size: 13px;
-    }
-
-    /* ═══ S7: GARANTÍA ═══ */
-    .guarantee-section {
-      padding: 40px 0;
-      background: var(--bg);
-    }
-    .guarantee-card {
-      background: var(--green-pale);
-      border: 1px solid rgba(34,197,94,0.25);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-align: center;
-    }
-    .guarantee-icon { font-size: 44px; margin-bottom: 12px; }
-    .guarantee-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .guarantee-text {
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.65;
-      margin-bottom: 12px;
-    }
-    .guarantee-line {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--green);
-    }
-
-    /* ═══ S8: CTA FINAL — PRICING ═══ */
-    .pricing {
-      padding: 52px 0 60px;
-      background: var(--bg2);
-    }
-    .price-anchor {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text3);
-      font-weight: 600;
-      margin-bottom: 28px;
-    }
-    .price-card {
-      background: var(--surface);
-      border: 1px solid rgba(255,107,26,0.3);
-      border-radius: 20px;
-      padding: 28px 24px;
-      position: relative;
-    }
-    .price-badge-top {
-      position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--orange);
-      color: #fff;
-      font-family: 'Sora', sans-serif;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-    .price-old {
-      font-size: 15px;
-      color: var(--text3);
-      text-decoration: line-through;
-      text-align: center;
-      margin-bottom: 4px;
-    }
-    .price-main {
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 60px;
-      font-weight: 800;
-      color: #fff;
-      text-align: center;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .price-currency { font-size: 26px; vertical-align: top; margin-top: 14px; display: inline-block; color: var(--orange2); }
-    .price-label {
-      text-align: center;
-      font-size: 14px;
-      color: var(--text3);
-      margin-bottom: 24px;
-    }
-    .price-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-    .price-bullets li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 15px;
-      color: var(--text2);
-    }
-    .check-icon {
-      width: 22px; height: 22px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px;
-      color: #fff;
-      flex-shrink: 0;
-      font-weight: 700;
-    }
-    .urgency-box {
-      background: rgba(255,107,26,0.08);
-      border: 1px solid rgba(255,107,26,0.2);
-      border-radius: var(--radius-sm);
-      padding: 12px 16px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--orange2);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    /* INSTRUCCIONES PAGO */
-    .payment-steps {
-      background: var(--surface2);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .payment-steps-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--orange2);
-      margin-bottom: 16px;
-    }
-    .pay-step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 14px;
-    }
-    .pay-step:last-child { margin-bottom: 0; }
-    .pay-num {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Sora', sans-serif;
-      font-size: 13px;
-      font-weight: 800;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .pay-step-label { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .pay-step-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
-    .divider { height: 1px; background: var(--border); margin: 12px 0; }
-
-    .btn-mp {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+      max-width: 420px;
       width: 100%;
-      background: #009EE3;
-      color: #fff;
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 17px;
-      font-weight: 800;
-      padding: 18px 24px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-      margin-bottom: 12px;
-      min-height: 60px;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn-mp:active { opacity: .85; transform: scale(0.98); }
-
-    .btn-wa {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      background: #25D366;
-      color: #fff;
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 16px 24px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-      min-height: 56px;
-    }
-    .btn-wa:active { opacity: .85; transform: scale(0.98); }
-
-    .alias-box {
-      margin-top: 16px;
-      border: 1px dashed rgba(255,255,255,0.15);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-    .alias-summary {
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--text3);
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .alias-body {
-      padding: 14px 16px;
-      background: rgba(0,0,0,0.2);
-      border-top: 1px dashed rgba(255,255,255,0.08);
-    }
-    .alias-display {
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 8px;
-    }
-    .alias-code {
-      font-family: monospace;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--orange2);
-      letter-spacing: .04em;
-    }
-    .copy-btn {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text2);
-      cursor: pointer;
-      transition: background .2s;
-    }
-    .copy-btn:active { background: rgba(34,197,94,0.2); color: var(--green); }
-
-    /* ═══ S9: FAQ ═══ */
-    .faq { padding: 52px 0; background: var(--bg); }
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .faq-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 18px 20px;
-      text-align: left;
-      font-family: 'Nunito', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      line-height: 1.4;
-      min-height: 48px;
-    }
-    .faq-arrow {
-      font-size: 20px;
-      color: var(--orange);
-      flex-shrink: 0;
-      transition: transform .25s;
-    }
-    .faq-item.open .faq-arrow { transform: rotate(45deg); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease, padding .3s;
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.65;
-      padding: 0 20px;
-    }
-    .faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
-
-    /* ═══ S10: FOOTER ═══ */
-    footer {
-      background: var(--bg2);
-      padding: 32px 20px;
+      border-radius: 28px;
+      padding: 40px 28px 36px;
       text-align: center;
-      color: var(--text3);
-      font-size: 13px;
-      border-top: 1px solid var(--border);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.10);
+      animation: fadeUp .45s ease both;
     }
-    footer a { color: var(--text3); text-decoration: underline; }
-
-    /* ═══ STICKY CTA (oculto cerca del botón de pago) ═══ */
-    .sticky-cta {
-      position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      width: calc(100% - 32px);
-      max-width: 400px;
-      background: var(--orange);
-      border-radius: 14px;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: 0 8px 32px rgba(255,107,26,0.4);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s, transform .3s;
-      transform: translateX(-50%) translateY(20px);
-    }
-    .sticky-cta.visible {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateX(-50%) translateY(0);
-    }
-    .sticky-label { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600; flex: 1; }
-    .sticky-btn {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      font-family: 'Sora', sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      white-space: nowrap;
-      min-height: 44px;
-      display: flex; align-items: center;
-    }
-
-    /* ═══ WHATSAPP FLOAT ═══ */
-    #waFloat {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      z-index: 200;
-      width: 54px; height: 54px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-      text-decoration: none;
-      transition: transform .2s;
-    }
-    #waFloat:active { transform: scale(0.92); }
-
-    /* ═══ ANIMACIONES ═══ */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(255,107,26,0.4); }
-      50%      { box-shadow: 0 0 0 8px rgba(255,107,26,0); }
-    }
-    .hero > .container > * {
-      animation: fadeUp .6s ease both;
-    }
-    .hero > .container > *:nth-child(1) { animation-delay: .05s; }
-    .hero > .container > *:nth-child(2) { animation-delay: .15s; }
-    .hero > .container > *:nth-child(3) { animation-delay: .25s; }
-    .hero > .container > *:nth-child(4) { animation-delay: .35s; }
-    .hero > .container > *:nth-child(5) { animation-delay: .45s; }
 
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ── STEP 1: Slider ── */
+    .step-icon { font-size: 48px; margin-bottom: 18px; display: block; }
+    h1 { font-size: 22px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; line-height: 1.25; }
+    .hint { font-size: 14px; color: #888; margin-bottom: 32px; line-height: 1.5; }
 
-    /* Reduce motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+    .slide-track {
+      position: relative; width: 100%; height: 64px;
+      background: #f0fdf4; border: 2px solid #22c55e;
+      border-radius: 40px; overflow: hidden;
+      cursor: grab; user-select: none; touch-action: none;
     }
+    .slide-track.done { background: #22c55e; border-color: #22c55e; }
+    .slide-fill {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 64px;
+      background: linear-gradient(90deg, #bbf7d0, #86efac);
+      border-radius: 40px; pointer-events: none;
+    }
+    .slide-track.done .slide-fill { width: 100% !important; background: #22c55e; transition: width .25s ease; }
+    .slide-thumb {
+      position: absolute; left: 4px; top: 4px;
+      width: 56px; height: 52px; background: #22c55e;
+      border-radius: 36px; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 14px rgba(34,197,94,0.45); z-index: 2;
+    }
+    .slide-track.done .slide-thumb { background: #fff; box-shadow: 0 3px 12px rgba(0,0,0,0.12); }
+    .slide-thumb svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .slide-track.done .slide-thumb svg { stroke: #22c55e; }
+    .icon-check { display: none; }
+    .slide-track.done .icon-arrow { display: none; }
+    .slide-track.done .icon-check { display: block; }
+    .slide-label {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700; color: #16a34a;
+      padding-left: 60px; pointer-events: none; transition: opacity .2s;
+    }
+    .slide-track.done .slide-label { opacity: 0; }
 
-    /* ═══ CONTENT VISIBILITY para secciones below fold ═══ */
-    .pain, .mechanism, .authority, .includes, .testimonials, .guarantee-section, .faq {
-      content-visibility: auto;
-      contain-intrinsic-size: 0 500px;
+    /* ── STEP 2: Upload ── */
+    #step2 { display: none; animation: fadeUp .4s ease both; }
+    .success-icon {
+      width: 72px; height: 72px; background: #f0fdf4; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 36px;
+      animation: pop .4s .05s cubic-bezier(.34,1.56,.64,1) both;
     }
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    h2 { font-size: 22px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
+    .sub { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 24px; }
+
+    /* Upload zone */
+    .upload-zone {
+      border: 2px dashed #d1d5db; border-radius: 16px;
+      padding: 28px 16px; cursor: pointer;
+      transition: border-color .2s, background .2s;
+      margin-bottom: 16px;
+    }
+    .upload-zone:hover, .upload-zone.dragover { border-color: #22c55e; background: #f0fdf4; }
+    .upload-zone .upload-icon { font-size: 36px; margin-bottom: 10px; }
+    .upload-zone p { font-size: 14px; color: #666; line-height: 1.5; }
+    .upload-zone p strong { color: #1a1a1a; }
+    #fileInput { display: none; }
+
+    .file-preview {
+      display: none; align-items: center; gap: 10px;
+      background: #f0fdf4; border: 1px solid #86efac;
+      border-radius: 12px; padding: 12px 14px; margin-bottom: 16px;
+      text-align: left;
+    }
+    .file-preview.show { display: flex; }
+    .file-preview .file-icon { font-size: 28px; flex-shrink: 0; }
+    .file-preview .file-name { font-size: 13px; font-weight: 600; color: #1a1a1a; word-break: break-all; }
+    .file-preview .file-size { font-size: 12px; color: #666; margin-top: 2px; }
+
+    .btn-upload {
+      width: 100%; background: #22c55e; color: #fff;
+      font-size: 16px; font-weight: 700; padding: 16px 24px;
+      border-radius: 16px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 20px rgba(34,197,94,0.35);
+      transition: opacity .2s, transform .2s; margin-bottom: 10px;
+    }
+    .btn-upload:hover:not(:disabled) { opacity: .9; transform: translateY(-2px); }
+    .btn-upload:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    .progress-bar-wrap {
+      display: none; width: 100%; height: 8px;
+      background: #e5e7eb; border-radius: 99px; overflow: hidden; margin-bottom: 12px;
+    }
+    .progress-bar-wrap.show { display: block; }
+    .progress-bar { height: 100%; width: 0%; background: #22c55e; border-radius: 99px; transition: width .3s ease; }
+
+    .status-msg { font-size: 13px; color: #666; min-height: 20px; margin-bottom: 16px; }
+    .status-msg.error { color: #ef4444; }
+    .status-msg.success { color: #16a34a; font-weight: 700; }
+
+    /* ── STEP 3: WhatsApp ── */
+    #step3 { display: none; animation: fadeUp .4s ease both; }
+    .client-num-box {
+      background: #f0fdf4; border: 2px solid #86efac;
+      border-radius: 16px; padding: 20px; margin-bottom: 24px;
+    }
+    .client-num-box .label { font-size: 13px; color: #666; margin-bottom: 6px; }
+    .client-num-box .num { font-size: 32px; font-weight: 800; color: #16a34a; letter-spacing: .05em; }
+
+    .btn-wa {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; background: #25D366; color: #fff;
+      font-size: 16px; font-weight: 700; padding: 16px 24px;
+      border-radius: 16px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: opacity .2s, transform .2s; margin-bottom: 14px;
+    }
+    .btn-wa:hover { opacity: .9; transform: translateY(-2px); }
+
+    .note { font-size: 12px; color: #aaa; line-height: 1.6; }
+    .note strong { color: #777; }
+    .divider { height: 1px; background: #eee; margin: 22px 0; }
+    .btn-home { display: inline-flex; align-items: center; gap: 6px; color: #bbb; font-size: 13px; text-decoration: none; transition: color .2s; }
+    .btn-home:hover { color: #555; }
   </style>
 </head>
-<body role="main">
+<body>
+<div class="card">
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S0: COUNTDOWN BAR — urgencia real         -->
-<!-- ══════════════════════════════════════════ -->
-<div id="topBar" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})">
-  🔥 Oferta termina en: <span id="countdown">30:00</span> — <strong>$4.900 ARS</strong>
+  <!-- ── STEP 1: Confirmar pago ── -->
+  <div id="step1">
+    <span class="step-icon">🧾</span>
+    <h1>¿Completaste el pago?</h1>
+    <p class="hint">Deslizá el botón para confirmar que realizaste el pago.</p>
+    <div class="slide-track" id="slider">
+      <div class="slide-fill" id="sliderFill"></div>
+      <div class="slide-thumb" id="sliderThumb">
+        <svg class="icon-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg class="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 20 4 14"/></svg>
+      </div>
+      <div class="slide-label">Deslizá para confirmar →</div>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: Subir comprobante ── -->
+  <div id="step2">
+    <div class="success-icon">✅</div>
+    <h2>¡Pago confirmado!</h2>
+    <p class="sub">Subí tu comprobante de pago para que podamos verificarlo y enviarte el recetario.</p>
+
+    <div class="upload-zone" id="uploadZone">
+      <div class="upload-icon">📎</div>
+      <p><strong>Tocá para subir tu comprobante</strong><br>Imagen (JPG, PNG) o PDF · Máx 10MB</p>
+    </div>
+    <input type="file" id="fileInput" accept="image/*,.pdf" />
+
+    <div class="file-preview" id="filePreview">
+      <span class="file-icon" id="fileIcon">📄</span>
+      <div>
+        <div class="file-name" id="fileName"></div>
+        <div class="file-size" id="fileSize"></div>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap" id="progressWrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <p class="status-msg" id="statusMsg"></p>
+
+    <button class="btn-upload" id="btnUpload" disabled>
+      ⬆️ Subir comprobante
+    </button>
+  </div>
+
+  <!-- ── STEP 3: Ir a WhatsApp ── -->
+  <div id="step3">
+    <div class="success-icon">🎉</div>
+    <h2>¡Comprobante recibido!</h2>
+    <p class="sub">Tu número de cliente es:</p>
+
+    <div class="client-num-box">
+      <div class="label">Número de cliente</div>
+      <div class="num" id="clientNumDisplay">CLI-0000</div>
+    </div>
+
+    <p class="sub">Mandanos este número por WhatsApp y en minutos te enviamos el recetario.</p>
+
+    <a class="btn-wa" id="btnWA" href="#" target="_blank" rel="noopener"
+       onclick="if(typeof fbq==='function') fbq('track','Purchase',{value:4900,currency:'ARS',content_name:'Recetario Air Fryer'})">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Enviar número por WhatsApp
+    </a>
+
+    <p class="note">Guardá tu número de cliente por cualquier consulta.<br><strong>Entrega del recetario en minutos.</strong></p>
+    <div class="divider"></div>
+    <a href="https://airfryer.onrender.com/" class="btn-home">← Volver al inicio</a>
+  </div>
+
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S1: HERO                                  -->
-<!-- ══════════════════════════════════════════ -->
-<section class="hero">
-  <div class="container">
-    <!-- Prueba social encima del headline -->
-    <div class="social-proof-anchor">
-      <span class="stars">★★★★★</span>
-      <span>+112 familias ya cocinan mejor con este recetario</span>
-    </div>
+<script>
+// ── Config ──
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0tQTAkL1x6oNhh66QNkK9HHcQDnh--f0teCwHgSvLQpUmdNvnMdu-WB8TY-MrRJ9E_A/exec';
+var WA_NUMBER  = '542644116786';
+var KEY_EXP    = 'af_expired_v2';
 
-    <!-- Headline con message match al anuncio -->
-    <h1 class="hero-headline">
-      No sabías todo lo que podés<br>cocinar en tu <em>air fryer</em>
-    </h1>
+// ── Precio según countdown ──
+var _precio = localStorage.getItem(KEY_EXP) === '1' ? '25000' : '4900';
 
-    <p class="hero-sub">
-      +300 recetas fáciles para que tu freidora trabaje para vos todos los días. Sin aceite, sin complicaciones, con ingredientes que ya tenés en casa.
-    </p>
+// ──────────────────────────────────────────
+// STEP 1 — Slider
+// ──────────────────────────────────────────
+(function() {
+  var track   = document.getElementById('slider');
+  var thumb   = document.getElementById('sliderThumb');
+  var fill    = document.getElementById('sliderFill');
+  var step1   = document.getElementById('step1');
+  var step2   = document.getElementById('step2');
+  var dragging = false, startX = 0, currentX = 0;
+  var trackW, thumbW, maxX;
 
-    <!-- ⚡ REEMPLAZAR imágenes con WebP reales ≤80KB -->
-    <div class="hero-carousel-wrap">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide">
-          <img
-            src="https://res.cloudinary.com/dvtggnvgn/image/upload/f_auto,q_auto,w_400/v1776714357/1_1_1_1_1_prs5sd.jpg"
-            alt="Empanadas criollas doradas en air fryer"
-            width="400" height="300"
-            loading="eager" fetchpriority="high" decoding="sync"
-          />
-          <div class="carousel-caption">🫔 Empanadas criollas</div>
-        </div>
-        <div class="carousel-slide">
-          <img
-            src="https://res.cloudinary.com/dvtggnvgn/image/upload/f_auto,q_auto,w_400/v1776714357/3_1_2_1_bvlgq1.jpg"
-            alt="Pollo con papas y limón en air fryer"
-            width="400" height="300"
-            loading="lazy" decoding="async"
-          />
-          <div class="carousel-caption">🍗 Pollo con papas y limón</div>
-        </div>
-        <div class="carousel-slide">
-          <img
-            src="https://res.cloudinary.com/dvtggnvgn/image/upload/f_auto,q_auto,w_400/v1776714356/2_1_1_1_1_hpaxu4.jpg"
-            alt="Costillas a la parrilla en air fryer"
-            width="400" height="300"
-            loading="lazy" decoding="async"
-          />
-          <div class="carousel-caption">🥩 Costillas a la parrilla</div>
-        </div>
-      </div>
-      <div class="carousel-dots" id="carouselDots">
-        <button class="cdot active" onclick="goSlide(0)" aria-label="Foto 1"></button>
-        <button class="cdot" onclick="goSlide(1)" aria-label="Foto 2"></button>
-        <button class="cdot" onclick="goSlide(2)" aria-label="Foto 3"></button>
-      </div>
-      <div class="hero-img-badge">+300 recetas</div>
-    </div>
+  function getDims() {
+    trackW = track.offsetWidth;
+    thumbW = thumb.offsetWidth;
+    maxX   = trackW - thumbW - 8;
+  }
 
-    <a href="#comprar" class="btn-cta">
-      🛒 Quiero mi recetario por $4.900 ARS
-    </a>
-    <p class="btn-microcopy">🔒 Pago seguro con Mercado Pago · Acceso inmediato en minutos</p>
-  </div>
-</section>
+  function setPos(x) {
+    x = Math.max(0, Math.min(x, maxX));
+    currentX = x;
+    thumb.style.left = (x + 4) + 'px';
+    fill.style.width = (x + thumbW) + 'px';
+  }
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S2: AGITACIÓN DEL DOLOR                   -->
-<!-- ══════════════════════════════════════════ -->
-<section class="pain">
-  <div class="container reveal">
-    <span class="tag">¿Te pasa esto?</span>
-    <h2 class="section-title">Tenés el air fryer, pero siempre terminás haciendo lo mismo</h2>
-    <p class="pain-intro">
-      Compraste la freidora con toda la ilusión de comer más sano y ahorrar plata. Pero las recetas de YouTube no te salen como en el video, y cuando intentás inventar algo, siempre queda seco o mal cocido.
-    </p>
-    <ul class="pain-list">
-      <li>Seguís los pasos del video y aun así el pollo queda duro o quemado por fuera</li>
-      <li>No sabés los tiempos ni temperaturas correctas para cada alimento</li>
-      <li>Siempre hacés lo mismo: papas fritas o nuggets, nada más</li>
-      <li>Pensás en pedir comida porque total no te sale bien</li>
-      <li>La freidora está guardada porque no sabés qué más hacer con ella</li>
-    </ul>
-    <div class="pain-reframe">
-      Eso no es un problema tuyo. Nadie te enseñó todo lo que puede hacer tu air fryer. Los videos muestran el resultado final, no los detalles que hacen la diferencia.
-    </div>
-  </div>
-</section>
+  function confirm() {
+    dragging = false;
+    track.classList.add('done');
+    thumb.style.cssText += ';transition:left .3s ease;';
+    fill.style.cssText  += ';transition:width .3s ease;';
+    thumb.style.left = (maxX + 4) + 'px';
+    setTimeout(function() {
+      step1.style.display = 'none';
+      step2.style.display = 'block';
+    }, 520);
+  }
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S3: REENCUADRE — El mecanismo             -->
-<!-- ══════════════════════════════════════════ -->
-<section class="mechanism">
-  <div class="container reveal">
-    <span class="tag">El cambio</span>
-    <h2 class="section-title">¿Y si tuvieras todas las recetas con los tiempos exactos?</h2>
-    <p class="section-sub">
-      El problema no es el air fryer. Es que las recetas de internet no están adaptadas a tu modelo, tus ingredientes ni tu cocina. Este recetario sí lo está.
-    </p>
+  function snapBack() {
+    dragging = false;
+    thumb.style.cssText += ';transition:left .3s ease;';
+    fill.style.cssText  += ';transition:width .3s ease;';
+    setPos(0);
+  }
 
-    <!-- Diagrama SVG inline — sin imagen externa, carga instantánea -->
-    <div class="mechanism-diagram">
-      <div class="diag-step">
-        <span class="icon">😔</span>
-        <span class="label">Siempre<br>lo mismo</span>
-      </div>
-      <div class="diag-arrow">→</div>
-      <div class="diag-step highlight">
-        <span class="icon">📖</span>
-        <span class="label">Recetario<br>+300 recetas</span>
-      </div>
-      <div class="diag-arrow">→</div>
-      <div class="diag-step">
-        <span class="icon">😍</span>
-        <span class="label">Familia<br>bien comida</span>
-      </div>
-    </div>
+  function startDrag(x) { getDims(); dragging = true; startX = x - currentX; thumb.style.transition = 'none'; fill.style.transition = 'none'; }
+  function moveDrag(x)  { if (!dragging) return; setPos(x - startX); if (currentX >= maxX * 0.85) confirm(); }
 
-    <p class="section-sub">
-      Recetas con ingredientes accesibles, tiempos y temperaturas exactas para cualquier modelo de freidora, paso a paso, en tu celular.
-    </p>
-  </div>
-</section>
+  thumb.addEventListener('mousedown',  function(e) { e.preventDefault(); startDrag(e.clientX); });
+  window.addEventListener('mousemove', function(e) { moveDrag(e.clientX); });
+  window.addEventListener('mouseup',   function()  { if (dragging) snapBack(); });
+  thumb.addEventListener('touchstart', function(e) { e.preventDefault(); startDrag(e.touches[0].clientX); }, { passive: false });
+  window.addEventListener('touchmove', function(e) { if (dragging) { e.preventDefault(); moveDrag(e.touches[0].clientX); } }, { passive: false });
+  window.addEventListener('touchend',  function()  { if (dragging) snapBack(); });
+  window.addEventListener('resize', getDims);
+  getDims();
+})();
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S4: AUTORIDAD                             -->
-<!-- ══════════════════════════════════════════ -->
-<section class="authority">
-  <div class="container reveal">
-    <span class="tag">Quién lo creó</span>
-    <h2 class="section-title">Fernando Alvarez, como vos antes de descubrir esto</h2>
+// ──────────────────────────────────────────
+// STEP 2 — Upload
+// ──────────────────────────────────────────
+var selectedFile = null;
 
-    <!-- ✏️ PERSONALIZAR: reemplazar FA con foto real de Fernando -->
-    <div class="author-card">
-      <div class="author-avatar-big">FA</div>
-      <div class="author-info">
-        <div class="author-name-big">Fernando Alvarez</div>
-        <div class="author-role">Repositor Carrefour · San Juan</div>
-      </div>
-    </div>
+var uploadZone  = document.getElementById('uploadZone');
+var fileInput   = document.getElementById('fileInput');
+var filePreview = document.getElementById('filePreview');
+var fileNameEl  = document.getElementById('fileName');
+var fileSizeEl  = document.getElementById('fileSize');
+var fileIconEl  = document.getElementById('fileIcon');
+var progressWrap = document.getElementById('progressWrap');
+var progressBar  = document.getElementById('progressBar');
+var statusMsg    = document.getElementById('statusMsg');
+var btnUpload    = document.getElementById('btnUpload');
 
-    <p class="author-story">
-      Yo también tenía el air fryer guardado porque no sabía qué cocinarle rico a mi familia. <strong>Empecé a anotar todas las recetas que fui probando</strong>, ajustando tiempos y temperaturas hasta que quedaban perfectas. Hoy dejé de pedir comida, <strong>bajé 7 kilos en el primer mes sin dejar de comer rico</strong>, y mi familia come mejor que nunca. Todo eso lo compilé en este recetario.
-    </p>
+uploadZone.addEventListener('click', function() { fileInput.click(); });
+uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
+uploadZone.addEventListener('drop', function(e) {
+  e.preventDefault(); uploadZone.classList.remove('dragover');
+  if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', function() {
+  if (fileInput.files[0]) handleFile(fileInput.files[0]);
+});
 
-    <div class="metrics-row">
-      <div class="metric-card">
-        <span class="metric-num">112</span>
-        <span class="metric-label">familias que ya lo usan</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-num">7kg</span>
-        <span class="metric-label">bajé en el 1er mes</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-num">+300</span>
-        <span class="metric-label">recetas probadas</span>
-      </div>
-    </div>
-  </div>
-</section>
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1048576).toFixed(1) + ' MB';
+}
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S5: QUÉ INCLUYE                           -->
-<!-- ══════════════════════════════════════════ -->
-<section class="includes">
-  <div class="container reveal">
-    <span class="tag">Contenido completo</span>
-    <h2 class="section-title">Todo lo que recibís hoy</h2>
+function handleFile(file) {
+  if (file.size > 10 * 1024 * 1024) {
+    statusMsg.textContent = 'El archivo es muy grande. Máximo 10MB.';
+    statusMsg.className = 'status-msg error';
+    return;
+  }
+  selectedFile = file;
+  fileNameEl.textContent = file.name;
+  fileSizeEl.textContent = formatSize(file.size);
+  fileIconEl.textContent = file.type === 'application/pdf' ? '📄' : '🖼️';
+  filePreview.classList.add('show');
+  statusMsg.textContent = '';
+  statusMsg.className = 'status-msg';
+  btnUpload.disabled = false;
+}
 
-    <ul class="chapter-list">
-      <li class="chapter-item">
-        <span class="chapter-num">01</span>
-        Guía de inicio: temperaturas y tiempos para cualquier air fryer
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">02</span>
-        Desayunos y meriendas que se hacen en 10 minutos
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">03</span>
-        Carnes, pollos y pescados — jugosos por dentro, dorados por fuera
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">04</span>
-        Verduras, recetas vegetarianas y veganas
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">05</span>
-        Snacks, papas y aperitivos para toda la familia
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">06</span>
-        Postres y dulces sin aceite ni culpa
-      </li>
-      <li class="chapter-item">
-        <span class="chapter-num">07</span>
-        Tabla de ajuste por modelo y marca de air fryer
-      </li>
-    </ul>
+btnUpload.addEventListener('click', function() {
+  if (!selectedFile) return;
+  btnUpload.disabled = true;
+  statusMsg.textContent = 'Subiendo comprobante...';
+  statusMsg.className = 'status-msg';
+  progressWrap.classList.add('show');
+  progressBar.style.width = '10%';
 
-    <!-- Stack de valor -->
-    <div class="value-stack">
-      <div class="value-stack-row">
-        <span>Recetario +300 recetas PDF</span>
-        <span class="price-val">$12.000</span>
-      </div>
-      <div class="value-stack-row">
-        <span>Guía de inicio y tabla de tiempos</span>
-        <span class="price-val">$5.000</span>
-      </div>
-      <div class="value-stack-row">
-        <span>Recetas de postres sin aceite</span>
-        <span class="price-val">$4.000</span>
-      </div>
-      <div class="value-stack-row">
-        <span>Tabla de ajuste por modelo</span>
-        <span class="price-val">$4.000</span>
-      </div>
-      <div class="value-total">
-        <span>Valor total</span>
-        <span class="total-val">$25.000</span>
-      </div>
-    </div>
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    progressBar.style.width = '40%';
+    var base64 = e.target.result.split(',')[1];
+    var payload = JSON.stringify({
+      file: base64,
+      fileName: selectedFile.name,
+      mimeType: selectedFile.type || 'application/octet-stream'
+    });
 
-    <a href="#comprar" class="btn-cta">
-      🛒 Quiero todo esto por $4.900 ARS
-    </a>
-  </div>
-</section>
+    progressBar.style.width = '60%';
 
-<!-- ══════════════════════════════════════════ -->
-<!-- S6: TESTIMONIOS                           -->
-<!-- ══════════════════════════════════════════ -->
-<section class="testimonials">
-  <div class="container reveal">
-    <span class="tag">Resultados reales</span>
-    <h2 class="section-title">Lo que dicen las familias que ya lo tienen</h2>
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: payload
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      progressBar.style.width = '100%';
+      if (data.success) {
+        setTimeout(function() {
+          showStep3(data.clientNum);
+        }, 400);
+      } else {
+        throw new Error(data.error || 'Error desconocido');
+      }
+    })
+    .catch(function(err) {
+      progressBar.style.width = '0%';
+      progressWrap.classList.remove('show');
+      statusMsg.textContent = 'Hubo un error al subir el archivo. Intentá de nuevo.';
+      statusMsg.className = 'status-msg error';
+      btnUpload.disabled = false;
+    });
+  };
+  reader.readAsDataURL(selectedFile);
+});
 
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">
-          "Tenía el air fryer guardado desde hace 6 meses. Con este recetario <strong>lo uso todos los días</strong>. La guía de tiempos me salvó: por fin el pollo me queda jugoso y no seco."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:#E8581A;">MG</div>
-          <div>
-            <div class="testi-name">María G.</div>
-            <div class="testi-city">Buenos Aires</div>
-          </div>
-        </div>
-      </div>
+// ──────────────────────────────────────────
+// STEP 3 — WhatsApp con número de cliente
+// ──────────────────────────────────────────
+function showStep3(clientNum) {
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'block';
+  document.getElementById('clientNumDisplay').textContent = clientNum;
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">
-          "Por fin recetas en español con medidas claras y tiempo exacto. <strong>Mis hijos me piden las milanesas todos los días</strong> y ya no necesitamos pedir delivery."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:#3A6B45;">LP</div>
-          <div>
-            <div class="testi-name">Laura P.</div>
-            <div class="testi-city">Córdoba</div>
-          </div>
-        </div>
-      </div>
+  var msg = encodeURIComponent('Ya realicé el pago, mi número de cliente es ' + clientNum);
+  document.getElementById('btnWA').href = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">
-          "Vale cada centavo. Empecé a comer más sano sin sentirme en dieta. <strong>Bajé 4 kilos en el primer mes</strong> solo cambiando cómo cocino el pollo y las verduras."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:#C8901A;">VR</div>
-          <div>
-            <div class="testi-name">Valeria R., 47 años</div>
-            <div class="testi-city">Rosario</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ✏️ PERSONALIZAR: reemplazar este placeholder con screenshot real de WhatsApp -->
-    <div class="wa-screenshot-placeholder">
-      📱 Acá va una captura de pantalla real de WhatsApp con un comprobante de compra o mensaje de agradecimiento de un cliente
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- S7: GARANTÍA                              -->
-<!-- ══════════════════════════════════════════ -->
-<section class="guarantee-section">
-  <div class="container reveal">
-    <div class="guarantee-card">
-      <div class="guarantee-icon">🛡️</div>
-      <div class="guarantee-title">Garantía 30 días sin preguntas</div>
-      <p class="guarantee-text">
-        Si en 30 días abrís el recetario, probás las recetas y no estás conforme, te devolvemos el dinero completo. Sin formularios raros. Sin excusas. Escribís por WhatsApp y listo.
-      </p>
-      <div class="guarantee-line">Vos no perdés nada. Yo sí. Por eso sé que te va a gustar.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- S8: CTA FINAL — PRICING                   -->
-<!-- ══════════════════════════════════════════ -->
-<section class="pricing" id="comprar">
-  <div class="container">
-    <div class="price-anchor">
-      <span>★★★★★</span>
-      <span>+112 familias ya lo tienen · Entrega inmediata</span>
-    </div>
-
-    <div class="price-card">
-      <div class="price-badge-top">⚡ Oferta de lanzamiento</div>
-
-      <div class="price-old">Precio regular $25.000 ARS</div>
-      <div class="price-main"><span class="price-currency">$</span>4.900</div>
-      <div class="price-label">ARS · pago único · tuyo para siempre</div>
-
-      <ul class="price-bullets">
-        <li><span class="check-icon">✓</span> +300 recetas en PDF descargable</li>
-        <li><span class="check-icon">✓</span> Guía de inicio con temperaturas y tiempos</li>
-        <li><span class="check-icon">✓</span> Tabla de ajuste por modelo de air fryer</li>
-        <li><span class="check-icon">✓</span> Funciona en celular, tablet y PC</li>
-        <li><span class="check-icon">✓</span> Garantía 30 días sin preguntas</li>
-      </ul>
-
-      <div class="urgency-box">
-        ⏳ Esta oferta vence pronto — precio sube a $25.000 ARS
-      </div>
-
-      <!-- INSTRUCCIONES DE PAGO -->
-      <div class="payment-steps">
-        <div class="payment-steps-title">📋 Cómo comprar — 3 pasos simples</div>
-
-        <div class="pay-step">
-          <div class="pay-num" style="background:var(--orange);">1</div>
-          <div>
-            <div class="pay-step-label">Pagá con Mercado Pago</div>
-            <div class="pay-step-desc">Tocá el botón azul. Te lleva directo al pago seguro.</div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Botón Mercado Pago — el onclick decide el destino en el momento del click -->
-        <a
-          href="#"
-          class="btn-mp"
-          id="btnMP"
-          target="_blank"
-          rel="noopener"
-          onclick="
-            event.preventDefault();
-            var expired = localStorage.getItem('af_expired_v2') === '1';
-            var url = expired ? 'https://mpago.la/1huLNpa' : 'https://mpago.la/1H6RhRL';
-            if(typeof fbq==='function') fbq('track','InitiateCheckout',{value: expired ? 25000 : 4900, currency:'ARS'});
-            window.open(url, '_blank', 'noopener');
-          "
-        >
-          <img
-            src="data:image/webp;base64,UklGRqoGAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSA8BAAABgBzZtmplv3Mz+JIE7gk4xOXk4RCBu+XwZarA/N1zz8blnTkVEROAj5kAUyu3XWMhU+dmZRKQDF8LsHQcWej8eAGQLwKquyQ1WVEsKcmdKsInASM1qrLgqqwNIAAQDL0w0mHOTj8EIuUGI11GNksiAYeMdBq5j4A5RrqNnAYuTf2onWJSjY5NRzepnpQrj0yeEm+faJ6MHXo3d//ANG+pR/Nk7D0weUq8X6N6Uq5PJPNkcSy7MPWjdgbMMvqJnEbAAaOXyH0EkXKT0UdkvSQCQX+L0UPObh8EQMBAjapFU2VtEAEfA6o7JDVZUSwpya0qAj4XYPE4Z6HzowVA8HUmwOTyTTsVQ9s3K5OAZPgIAFZQOCB0BQAAMBoAnQEqQABAAD6dOJhIpaMiIS4bbHCwE4lsAMUL+4mfsn15/AcQuaqF54kXSi8xn6x+uh6Nv956UHUQbyf+5Ux+yGvEDvr2s94DyrwcfqX+24zu2i8kDwmfBf1d9w7+f/7f2UP5z/x+T78x/yn/i9wT+S/0z/n+tn7Iv239nD9rmsv7bJaueD9ni73tSZzlYx3mkVLf4OBr2U7QMicr1t3yQZjrrXLpiS8EFioOdlnXAHCEd5wQME+utCBWD+rXNN/gkvb8gRnqtqVdsBmroAsYErpuiliG2IAA/v59emxd71p/gj1/w0KhD7/j9OGD1jh5W3yC0QM0GCwtyabZCNTZ1iZPojW/yGPR128HeG+Z0IdqDqx08RAJYHMtTMwTdsaXv27aYOpJa5/+NTRhYvcmviRlJKdvVJBX2Yp5Hmu9beiy0fAbqRRqMuBaDnc+nnSpgSNYcwxuXVuNfw3s08jTq2SnwfBnOxn/zQ9ev+kpWwuQVOhHBpSj+AKertDvvKlHNUklnwsBP7CcOQjdExSt+YhEjK72OOSyFMs4QFa9JdfwDNnruYPZoo0h2Qn+Bp9fgwR3GBU2V8MhwJz0892As7SNSz9AZzCEytQC47+X8JVda6dB7K/zluUlG3iUpuNt1TjpX9LaXA/hehEBnyy7UcsVBtW8SuKH/Pq3gNf7cO0/zVxg7uyhebbMCpHrLQpfUccMZ7zW+la4340A5TaWuH1w258vHGtOx/jn8HHvrtRudfBPg9ZbR9aq15NA2BOOmJ7OUwinXyNK5yPJTtoVItWLphv/3/w9/UfegZMOOGQhkPiF8vl5hMLaZYE/fSVbT59juhdxeCrltpptIYsVLWPd5PEUYkCrL2LfTqcD7itBRNekryAT6svu7iv0sdgPSwRguemVwcEUX8tpxW+u1Z8vyalz30bzsiyRLijqlshtvjwNfiTCTduJzt5IveLrlNtFSDLbSLwb1EEgySB15y0deoBdD62Me8R552c5JqUoQ5RrE/hoEdkM9tju/gXgv7maTpePg1m3rxPiutkkkSlT6AfAP2+sOXusue7c1+UVp9fofDWqwstH5S9LMqVWfavzDO/HSb7zC611wXo4MTWdolGZcPAGR8FEaKgqGUN+n/Yn71CQF0wUAgv+DzGRHKdZt0+xB2b/Iw2hiImmbgVRBuKxuyIt2irvNFF1GvZhv1rtbT4KfnshqX76X0gE3EWlmk04GCaSSilH5WTIJpnKR20MugbMthkCEfz4R9orkRXD3ML/EQF32VYgZyc9Wfbjbhz4IO/eLbARqcm965ahLMZpBsXeB5KPU8gdPHm/YxLqs7gSr//NRTS7h1KF8TBj38Y4bsOSLp9+tCqRYWC50QSuSh2oUx2KN4fG6l2cdP4542xu3KAMrCFz+hf3HDrYm0s2pWFOxf914VbftYwUgekK7De/Tz0WmaXjLTubBhQfxx570jF/5nWHyycl5n3WF+Jw2aEjH6M+AtJVwyISp97slZH5Ez6dP3kAZAwNYsoZ7k9rL+6BvjsTmXwzd8JiW8JEiE2jbMhfALejLxtDz4D23i/Ju00oRayt8nrjMH+DXkSGaTNIXwvafiOemflGln/nCB/88/8qVzI3V2Jsu71CzpyLWvSNs3bS46SejOPvOPvCQ9jKHLeApckXYXBVl7e0tIeABjfhU+idQanlvLyouvxUAGbzfvIumu25g4l99fnpWjj7lSS3qL4dVFHP69g76pHLF9L8saP5PDkI3ntKlZ1Oop5/N7V2P7xGQGHWunXCBwdrp/UrIU9pCrp8FR/QvJdBLQ0IpjoEjQqnJ6GxhXf5Gv1i0SM9t15tkQYiGH+6dJWW6BxciAAAAA=="
-            width="56" height="56"
-            alt="Mercado Pago"
-            style="border-radius:8px;flex-shrink:0;"
-          />
-          <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
-            <span style="font-size:11px;font-weight:400;opacity:.85;">Pagar con</span>
-            <span class="mp-price-span">Mercado Pago · $4.900</span>
-          </span>
-        </a>
-        <div class="divider"></div>
-
-        <div class="pay-step">
-          <div class="pay-num" style="background:var(--orange);">2</div>
-          <div>
-            <div class="pay-step-label">Envianos el comprobante</div>
-            <div class="pay-step-desc">Captura de pantalla al WhatsApp. Verificamos al instante.</div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="pay-step">
-          <div class="pay-num" style="background:var(--green);">3</div>
-          <div>
-            <div class="pay-step-label">Recibís tu recetario en minutos</div>
-            <div class="pay-step-desc">Te enviamos el PDF por el mismo WhatsApp. ¡Listo para cocinar!</div>
-          </div>
-        </div>
-
-        <!-- Alias como alternativa secundaria — oculto por defecto -->
-        <div class="alias-box" style="margin-top:14px;">
-          <details>
-            <summary class="alias-summary">
-              <span>🏦 ¿Preferís pagar desde tu banco? <strong style="color:var(--text2);">Ver alias</strong></span>
-              <span style="font-size:11px;color:var(--text3);">ver →</span>
-            </summary>
-            <div class="alias-body">
-              <div style="font-size:12px;color:var(--text3);margin-bottom:8px;">Transferí <strong style="color:#fff;">$4.900 ARS</strong> al alias:</div>
-              <div class="alias-display">
-                <span class="alias-code">dlh.oficial</span>
-                <button class="copy-btn" onclick="copyAlias()" id="copyBtn">Copiar</button>
-              </div>
-              <div style="font-size:11px;color:var(--text3);margin-top:8px;">Compatible con BBVA, Santander, Galicia, Brubank, Naranja X y cualquier banco.</div>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <!-- Botón WhatsApp para enviar comprobante -->
-      <!-- ⚡ El pixel de Purchase se dispara SOLO acá, no en carga de página -->
-      <a
-        href="https://wa.me/542644116786?text=Hola%21%20Acabo%20de%20realizar%20el%20pago%20de%20%244.900%20ARS%20para%20el%20Recetario%20Air%20Fryer.%20Te%20comparto%20el%20comprobante%20%F0%9F%A7%BE"
-        target="_blank"
-        rel="noopener"
-        class="btn-wa"
-        id="btnWA"
-        onclick="if(typeof fbq==='function') fbq('track','Purchase',{value:4900,currency:'ARS',content_name:'Recetario Air Fryer'})"
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enviar comprobante por WhatsApp
-      </a>
-
-      <p class="btn-microcopy">Sin contratos · Acceso de por vida · Garantía 30 días</p>
-      <p class="btn-microcopy" style="margin-top:6px;">🛡️ 30 días de garantía sin preguntas</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- S9: FAQ — Destrucción de objeciones       -->
-<!-- ══════════════════════════════════════════ -->
-<section class="faq">
-  <div class="container reveal">
-    <span class="tag" style="display:block;text-align:center;">Preguntas frecuentes</span>
-    <h2 class="section-title" style="text-align:center;">¿Todavía tenés dudas?</h2>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          ¿Vale la pena si ya intenté con recetas de YouTube?
-          <span class="faq-arrow" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Los videos de YouTube te muestran el resultado pero no te dicen los detalles que hacen la diferencia: qué temperatura exacta, cuánto tiempo según el tamaño de tu ingrediente, ni cómo ajustar para tu modelo de freidora. Este recetario tiene todo eso explicado para cada receta.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          ¿Es legítimo? ¿Cómo sé que lo voy a recibir?
-          <span class="faq-arrow" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          El pago lo hacés por Mercado Pago o transferencia bancaria — no te pedimos datos raros ni nada fuera de lo común. Una vez que confirmamos el pago (en minutos), te mandamos el PDF directamente por WhatsApp al número que usaste para contactarnos. Simple y seguro.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          No tengo tiempo para cocinar. ¿Me va a servir?
-          <span class="faq-arrow" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          La mayoría de las recetas están listas en menos de 20 minutos. El air fryer hace el trabajo mientras vos hacés otra cosa. De hecho, si no tenés tiempo, es exactamente para lo que fue diseñado este recetario.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          ¿Funciona con mi marca de air fryer?
-          <span class="faq-arrow" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Sí. Incluimos una tabla de ajuste de tiempos y temperaturas para los modelos más comunes (Essen, Philips, Oster, Black+Decker, etc.). Las recetas funcionan con cualquier freidora de aire.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          ¿Cómo recibo el recetario después de pagar?
-          <span class="faq-arrow" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Pagás, mandás el comprobante por WhatsApp y en minutos te enviamos el PDF al mismo chat. Lo abrís en el celular, tablet o computadora. Una vez descargado, lo tenés para siempre sin necesitar internet.
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- S10: FOOTER MÍNIMO                        -->
-<!-- ══════════════════════════════════════════ -->
-<footer>
-  <p>© 2025 Recetario Air Fryer · Fernando Alvarez · Todos los derechos reservados</p>
-  <p style="margin-top:8px;">
-    <a href="mailto:contacto@recetarioairfryer.com">Contacto</a>
-    &nbsp;·&nbsp;
-    <a href="#">Aviso de privacidad</a>
-    &nbsp;·&nbsp;
-    <a href="#">Términos</a>
-  </p>
-</footer>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- STICKY CTA                                -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Comprar ahora">
-  <span class="sticky-label">📖 Recetario Air Fryer</span>
-  <a href="#comprar" class="sticky-btn">$4.900 ARS</a>
-</div>
-
-<!-- WHATSAPP FLOAT -->
-<a
-  href="https://wa.me/542644116786?text=Hola%21%20Quiero%20comprar%20el%20Recetario%20Air%20Fryer%20%F0%9F%8D%B3"
-  target="_blank"
-  rel="noopener"
-  id="waFloat"
-  title="Escribinos por WhatsApp"
-  aria-label="Contactar por WhatsApp"
->
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- JS — al final del body, no bloqueante     -->
-<!-- ══════════════════════════════════════════ -->
-<script defer>
-  // ── Carousel ──
-  var _track = document.getElementById('carouselTrack');
-  var _dots  = document.querySelectorAll('.cdot');
-  var _slide = 0;
-
-  function goSlide(n) {
-    _slide = n;
-    requestAnimationFrame(function() {
-      _track.style.transform = 'translateX(-' + (n * 100 / 3) + '%)';
-      _dots.forEach(function(d, i) {
-        d.classList.toggle('active', i === n);
-      });
+  // Pixel Purchase
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Purchase', {
+      value: parseInt(_precio, 10),
+      currency: 'ARS',
+      content_name: 'Recetario Air Fryer',
+      content_type: 'product'
     });
   }
-
-  // Touch swipe en carousel
-  (function() {
-    var wrap = document.querySelector('.hero-carousel-wrap');
-    if (!wrap) return;
-    var startX = 0;
-    wrap.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-    wrap.addEventListener('touchend', function(e) {
-      var diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) goSlide((_slide + (diff > 0 ? 1 : -1) + 3) % 3);
-    }, { passive: true });
-  })();
-
-  // Autoplay cada 3.5s
-  setInterval(function() { goSlide((_slide + 1) % 3); }, 3500);
-
-  // ── Sticky CTA ──
-  var _sticky = document.getElementById('stickyCta');
-  var _pricing = document.getElementById('comprar');
-
-  window.addEventListener('scroll', function() {
-    if (!_sticky || !_pricing) return;
-    var rect = _pricing.getBoundingClientRect();
-    var nearPayment = rect.top < window.innerHeight + 100 && rect.bottom > -100;
-    _sticky.classList.toggle('visible', window.scrollY > 400 && !nearPayment);
-  }, { passive: true });
-
-  // ── FAQ accordion ──
-  function toggleFaq(btn) {
-    var item = btn.closest('.faq-item');
-    var isOpen = item.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen);
-  }
-
-  // ── Copiar alias ──
-  function copyAlias() {
-    var btn = document.getElementById('copyBtn');
-    navigator.clipboard.writeText('dlh.oficial').then(function() {
-      btn.textContent = '✓ Copiado';
-      btn.style.background = 'rgba(34,197,94,0.2)';
-      btn.style.color = '#22C55E';
-      setTimeout(function() {
-        btn.textContent = 'Copiar';
-        btn.style.background = '';
-        btn.style.color = '';
-      }, 2000);
-    }).catch(function() {
-      // Fallback para browsers sin clipboard API
-      btn.textContent = 'dlh.oficial';
-    });
-  }
-
-  // ── Reveal on scroll — IntersectionObserver (no scroll event) ──
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(function(el) { observer.observe(el); });
-  } else {
-    // Fallback: mostrar todo si no hay IntersectionObserver
-    revealEls.forEach(function(el) { el.classList.add('visible'); });
-  }
+}
 </script>
-
-<!-- ══════════════════════════════════════════ -->
-<!-- COUNTDOWN — persiste en localStorage      -->
-<!-- NOTA: El timer NO reinicia al expirar.    -->
-<!-- Muestra "Oferta vencida" y precio normal. -->
-<!-- ══════════════════════════════════════════ -->
-<script defer>
-  (function() {
-    var KEY_END = 'af_cd_end_v2';
-    var KEY_EXP = 'af_expired_v2';
-    var MINS = 30;
-    var PRICE_OFFER = '4.900';
-    var PRICE_FULL  = '25.000';
-
-    function showExpired() {
-      // Cambiar precio principal
-      document.querySelectorAll('.price-main').forEach(function(el) {
-        el.innerHTML = '<span class="price-currency">$</span>' + PRICE_FULL;
-      });
-      document.querySelectorAll('.price-old').forEach(function(el) {
-        el.textContent = 'Precio lanzamiento $' + PRICE_OFFER + ' ARS';
-      });
-      document.querySelectorAll('.price-label').forEach(function(el) {
-        el.textContent = 'ARS · precio regular';
-      });
-      var mpLink = document.getElementById('btnMP');
-      if (mpLink) { mpLink.href = 'https://mpago.la/1huLNpa'; mpLink.target = '_blank'; mpLink.rel = 'noopener'; }
-      var mpSpan = document.querySelector('.mp-price-span');
-      if (mpSpan) mpSpan.textContent = 'Mercado Pago · $' + PRICE_FULL;
-      // Sticky CTA
-      var sBtn = document.querySelector('.sticky-btn');
-      if (sBtn) sBtn.textContent = '$' + PRICE_FULL + ' ARS';
-      // Hero CTA
-      document.querySelectorAll('.btn-cta').forEach(function(el) {
-        el.textContent = '🛒 Comprar por $' + PRICE_FULL + ' ARS';
-      });
-      // Top bar
-      var bar = document.getElementById('topBar');
-      if (bar) {
-        bar.style.background = '#555';
-        bar.textContent = '⌛ Oferta vencida — Precio regular $' + PRICE_FULL + ' ARS';
-      }
-    }
-
-    // Comprobar si ya expiró (cache del dispositivo)
-    if (localStorage.getItem(KEY_EXP) === '1') {
-      document.addEventListener('DOMContentLoaded', showExpired);
-      return;
-    }
-
-    var stored = localStorage.getItem(KEY_END);
-    var endTime = stored ? parseInt(stored, 10) : Date.now() + MINS * 60000;
-    if (!stored) localStorage.setItem(KEY_END, endTime);
-
-    var el = document.getElementById('countdown');
-    function tick() {
-      var diff = endTime - Date.now();
-      if (diff <= 0) {
-        localStorage.setItem(KEY_EXP, '1');
-        localStorage.removeItem(KEY_END);
-        showExpired();
-        return;
-      }
-      var m = Math.floor(diff / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
-      if (el) el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-</script>
-
 </body>
 </html>
