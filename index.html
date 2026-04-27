@@ -1483,8 +1483,14 @@
 
 <!-- WHATSAPP FLOAT -->
 <a
-  href="https://wa.me/542644116786?text=Hola%21%20Quiero%20comprar%20el%20Recetario%20Air%20Fryer%20%F0%9F%8D%B3"
-  target="_blank"
+  href="javascript:void(0)"
+  onclick="
+    var expired = localStorage.getItem('af_expired_v2') === '1';
+    var msg = expired
+      ? 'Hola%21%20Quiero%20comprar%20el%20Recetario%20Air%20Fryer%20%F0%9F%8D%B3'
+      : 'Hola%21%20Quiero%20comprar%20el%20Recetario%20Air%20Fryer%20%F0%9F%8D%B3%20en%20oferta';
+    window.open('https://wa.me/542644116786?text=' + msg, '_blank', 'noopener');
+  "
   rel="noopener"
   id="waFloat"
   title="Escribinos por WhatsApp"
