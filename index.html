@@ -569,6 +569,7 @@
     .pricing {
       padding: 52px 0 60px;
       background: var(--bg2);
+      scroll-margin-top: 52px;
     }
     .price-anchor {
       display: flex;
@@ -845,7 +846,9 @@
     }
     .faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
 
-    /* ═══ S10: FOOTER ═══ */
+    .pricing {
+      scroll-margin-top: 60px;
+    }
     footer {
       background: var(--bg2);
       padding: 32px 20px;
@@ -940,8 +943,11 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
 
-    /* ═══ CONTENT VISIBILITY para secciones below fold ═══ */
-    .pain, .mechanism, .authority, .includes, .testimonials, .guarantee-section, .faq {
+    /* ═══ CONTENT VISIBILITY — solo en FAQ (última sección, no afecta scroll a #comprar) ═══ */
+    /* REMOVIDO de pain/mechanism/authority/includes/testimonials:
+       content-visibility:auto impide que el layout se resuelva antes de que el elemento
+       entre al viewport, rompiendo el cálculo de posición en el primer click al botón CTA. */
+    .faq {
       content-visibility: auto;
       contain-intrinsic-size: 0 500px;
     }
@@ -952,7 +958,7 @@
 <!-- ══════════════════════════════════════════ -->
 <!-- S0: COUNTDOWN BAR — urgencia real         -->
 <!-- ══════════════════════════════════════════ -->
-<div id="topBar" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})">
+<div id="topBar" onclick="irAComprar()">
   ⏰ Oferta vence en: <span id="countdown">30:00</span> — después vuelve a <strong>$25.000</strong> · Hoy solo <strong>$4.900</strong>
 </div>
 
@@ -1012,7 +1018,7 @@
       <div class="hero-img-badge">+365 recetas</div>
     </div>
 
-    <a href="#comprar" class="btn-cta">
+    <a href="javascript:void(0)" class="btn-cta" onclick="irAComprar()">
       👉 Quiero el recetario ahora
     </a>
     <p class="btn-microcopy">🔒 Pago seguro · Acceso inmediato · <s style="opacity:.6;">$25.000</s> → hoy <strong style="color:var(--orange2);">$4.900 ARS</strong></p>
@@ -1184,7 +1190,7 @@
       </div>
     </div>
 
-    <a href="#comprar" class="btn-cta">
+    <a href="javascript:void(0)" class="btn-cta" onclick="irAComprar()">
       👉 Quiero el recetario ahora
     </a>
   </div>
@@ -1472,7 +1478,7 @@
 <!-- ══════════════════════════════════════════ -->
 <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Comprar ahora">
   <span class="sticky-label">📖 Recetario Air Fryer</span>
-  <a href="#comprar" class="sticky-btn">$4.900 ARS</a>
+  <a href="javascript:void(0)" class="sticky-btn" onclick="irAComprar()">$4.900 ARS</a>
 </div>
 
 <!-- WHATSAPP FLOAT -->
@@ -1538,6 +1544,9 @@
     var rect = _pricing.getBoundingClientRect();
     var nearPayment = rect.top < window.innerHeight + 100 && rect.bottom > -100;
     _sticky.classList.toggle('visible', window.scrollY > 400 && !nearPayment);
+    // Ocultar botón flotante WA cuando está en sección de pago
+    var waFloat = document.getElementById('waFloat');
+    if (waFloat) waFloat.style.display = nearPayment ? 'none' : 'flex';
   }, { passive: true });
 
   // ── FAQ accordion ──
@@ -1659,6 +1668,15 @@
     tick();
     setInterval(tick, 1000);
   })();
+</script>
+
+<!-- Función de scroll inline — sin defer para que esté disponible inmediatamente -->
+<script>
+  function irAComprar() {
+    var target = document.getElementById('comprar');
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 </script>
 
 </body>
